@@ -8,15 +8,15 @@ import Profile from './components/Profile/Profile';
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
-    <Routes>
-      <Route>
-        <Route path="/" element={<Rockets />} />
-        <Route path="/missions" element={<Missions/>} />
-        <Route path="/profile" element={<Profile />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route>
+          <Route path="/" element={<Rockets />} />
+          <Route path="/missions" element={<Missions />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
