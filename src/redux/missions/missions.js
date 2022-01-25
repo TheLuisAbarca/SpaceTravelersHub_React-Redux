@@ -20,16 +20,14 @@ export const getMissions = () => async (dispatch) => {
       });
     });
     dispatch(fetchMissions(newPayload));
-    // dispatch({ type: FETCH_DATA, payload: newPayload });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_DATA: {
-      console.log(action.payload);
       return action.payload;
     }
     default:
