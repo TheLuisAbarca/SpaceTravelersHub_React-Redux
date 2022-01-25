@@ -18,7 +18,7 @@ const RocketItem = ({ rocket }) => {
 
 RocketItem.propTypes = {
   rocket: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
