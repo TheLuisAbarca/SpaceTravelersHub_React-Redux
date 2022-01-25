@@ -1,16 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { bookRocket } from '../../redux/rockets/rockets';
 import styles from './RocketItem.module.css';
 
 const RocketItem = ({ rocket }) => {
-  const { name, description, img } = rocket;
+  const {
+    id, name, description, img,
+  } = rocket;
+
+  const dispatch = useDispatch();
+  const clickHandler = () => {
+    dispatch(bookRocket(id));
+  };
+
   return (
     <li className={styles.card}>
       <img src={img} alt={name} className={styles.img} />
       <div className={styles.cardBody}>
         <h3>{name}</h3>
         <p>{description}</p>
-        <button type="button" className={styles.btn}>Reserve Rocket</button>
+        <button type="button" onClick={clickHandler} className={styles.btn}>Reserve Rocket</button>
       </div>
     </li>
   );

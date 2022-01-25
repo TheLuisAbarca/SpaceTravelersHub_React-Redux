@@ -1,6 +1,7 @@
 import getRocketsAPI from '../../API/rocketsAPI';
 
 const GET_ROCKETS = 'GET_ROCKETS';
+const BOOK_ROCKET = 'BOOK_ROCKET';
 
 export const getRocketsAction = () => async (dispatch) => {
   const rockets = await getRocketsAPI();
@@ -17,10 +18,17 @@ export const getRocketsAction = () => async (dispatch) => {
   dispatch({ type: GET_ROCKETS, payload: validrockets });
 };
 
+export const bookRocket = (id) => ({ type: BOOK_ROCKET, id });
+
 const reducer = (state = [], action) => {
   switch (action.type) {
     case GET_ROCKETS:
       return action.payload;
+    case BOOK_ROCKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: true };
+      });
     default:
       return state;
   }
