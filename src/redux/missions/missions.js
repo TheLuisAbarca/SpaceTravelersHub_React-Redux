@@ -1,3 +1,5 @@
+import getMissionsAPI from '../../API/missionAPI';
+
 const FETCH_DATA = 'FETCH_DATA';
 
 const fetchMissions = (payload) => ({
@@ -6,29 +8,22 @@ const fetchMissions = (payload) => ({
 });
 
 export const getMissions = () => async (dispatch) => {
-  const response = await fetch('https://api.spacexdata.com/v3/missions', {
-    method: 'GET',
-  });
-  try {
-    const data = await response.json();
-    const newPayload = [];
-    data.forEach((mission) => {
-      newPayload.push({
-        mission_id: mission.mission_id,
-        mission_name: mission.mission_name,
-        mission_description: mission.description,
-      });
+  const response = await getMissionsAPI();
+  const newPayload = [];
+  response.forEach((mission) => {
+    newPayload.push({
+      mission_id: mission.mission_id,
+      mission_name: mission.mission_name,
+      mission_description: mission.description,
     });
-    dispatch(fetchMissions(newPayload));
-  } catch (error) {
-    console.error(error);
-  }
+  });
+  dispatch(fetchMissions(newPayload));
 };
 
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_DATA: {
-      return action.payload;
+      return action.payload.map((mission) => ({ ...mission }));
     }
     default:
       return state;
