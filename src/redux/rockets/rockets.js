@@ -17,7 +17,7 @@ export const getRocketsAction = () => async (dispatch) => {
   dispatch({ type: GET_ROCKETS, payload: validrockets });
 };
 
-const reducer = (state = {}, action) => {
+const reducer = (state = [], action) => {
   switch (action.type) {
     case GET_ROCKETS:
       return action.payload;
