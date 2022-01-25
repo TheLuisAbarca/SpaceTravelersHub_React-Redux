@@ -5,9 +5,9 @@ import RocketItem from '../RocketItem/RocketItem';
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
   return (
-    <div>
+    <ul>
       { rockets.map((rocket) => (<RocketItem key={rocket.id} rocket={rocket} />)) }
-    </div>
+    </ul>
   );
 };
 
