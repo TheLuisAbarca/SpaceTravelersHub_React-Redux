@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './RocketItem.module.css';
 
 const RocketItem = ({ rocket }) => {
   console.log(rocket);
   const { name, description, img } = rocket;
   return (
-    <div>
-      <img src={img} alt={name} />
+    <li className={styles.card}>
+      <img src={img} alt={name} className={styles.img} />
       <h1>{name}</h1>
       <p>{description}</p>
       <button type="button">Reserve Rocket</button>
-    </div>
+    </li>
   );
 };
 
