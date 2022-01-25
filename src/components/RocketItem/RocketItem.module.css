@@ -1,0 +1,23 @@
+.card {
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+}
+
+.img {
+  width: 230px;
+  height: 200px;
+}
+
+.cardBody {
+  margin-left: 20px;
+}
+
+.btn {
+  padding: 15px 20px;
+  color: white;
+  background-color: rgb(16, 128, 233);
+  border: 0;
+  border-radius: 5px;
+}
