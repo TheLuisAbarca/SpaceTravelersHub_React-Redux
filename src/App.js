@@ -7,6 +7,7 @@ import Missions from './components/Missions/Missions';
 import Rockets from './components/Rockets/Rockets';
 import Profile from './components/Profile/Profile';
 import { getRocketsAction } from './redux/rockets/rockets';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const dispatch = useDispatch();
