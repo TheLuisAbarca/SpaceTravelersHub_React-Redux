@@ -44,7 +44,7 @@ const Mission = ({ mission }) => {
           {!mission.reserved && <Badge bg="secondary" className={style.capitalized}>Not a member</Badge>}
         </td>
         <td className="align-middle">
-          {mission.reserved && <Button onClick={clickHandler} type="button" variant="outline-secondary">Join Mission</Button>}
+          {!mission.reserved && <Button onClick={clickHandler} type="button" variant="outline-secondary">Join Mission</Button>}
           {mission.reserved && <Button onClick={clickHandler} type="button" variant="outline-danger">Leave Mission</Button>}
         </td>
       </tr>
