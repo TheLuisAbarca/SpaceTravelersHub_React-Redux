@@ -31,7 +31,7 @@ const reducer = (state = [], action) => {
         if (rocket.id !== action.id) return rocket;
         return { ...rocket, reserved: true };
       });
-    case BOOK_ROCKET:
+    case CANCEL_ROCKET:
       return state.map((rocket) => {
         if (rocket.id !== action.id) return rocket;
         return { ...rocket, reserved: false };
