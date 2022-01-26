@@ -6,11 +6,15 @@ import Table from 'react-bootstrap/Table';
 import { getMissions } from '../../redux/missions/missions';
 import Mission from '../Mission/Mission';
 
+let flag = true;
+
 const Missions = () => {
   const missions = useSelector((state) => state.missionsReducer);
 
   const dispatch = useDispatch();
   useEffect(() => {
+    if (!flag) return;
+    flag = false;
     dispatch(getMissions());
   }, [dispatch]);
 
