@@ -4,15 +4,17 @@ import styles from './Profile.module.css';
 
 const Profile = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
+  const missions = useSelector((state) => state.missionsReducer);
 
   return (
     <div className={styles.profileContainer}>
       <div className={styles.divContainers}>
         <h2>My Missions</h2>
         <ul className={styles.list}>
-          <li>List 1</li>
-          <li>List 1</li>
-          <li>List 1</li>
+          {
+            missions.filter((mission) => (mission.reserved === true))
+              .map((mission) => (<li key={mission.mission_id}>{mission.mission_name}</li>))
+          }
         </ul>
       </div>
       <div className={styles.divContainers}>
