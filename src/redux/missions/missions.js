@@ -2,6 +2,7 @@ import getMissionsAPI from '../../API/missionAPI';
 
 const FETCH_DATA = 'FETCH_DATA';
 const JOIN_MISSION = 'JOIN_MISSION';
+const LEAVE_MISSION = 'LEAVE_MISSION';
 
 const fetchMissions = (payload) => ({
   type: FETCH_DATA,
@@ -23,15 +24,21 @@ export const getMissions = () => async (dispatch) => {
 
 export const joinMission = (id) => ({ type: JOIN_MISSION, id });
 
+export const leaveMission = (id) => ({ type: LEAVE_MISSION, id });
+
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_DATA: {
       return action.payload;
     }
     case JOIN_MISSION: {
-      console.log(state);
       return state.map((mission) => (mission.mission_id === action.id
         ? { ...mission, reserved: true }
+        : mission));
+    }
+    case LEAVE_MISSION: {
+      return state.map((mission) => (mission.mission_id === action.id
+        ? { ...mission, reserved: false }
         : mission));
     }
     default:
