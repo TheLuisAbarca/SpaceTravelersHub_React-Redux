@@ -2,6 +2,7 @@ import getRocketsAPI from '../../API/rocketsAPI';
 
 const GET_ROCKETS = 'GET_ROCKETS';
 const BOOK_ROCKET = 'BOOK_ROCKET';
+const CANCEL_ROCKET = 'CANCEL_ROCKET';
 
 export const getRocketsAction = () => async (dispatch) => {
   const rockets = await getRocketsAPI();
@@ -19,6 +20,7 @@ export const getRocketsAction = () => async (dispatch) => {
 };
 
 export const bookRocket = (id) => ({ type: BOOK_ROCKET, id });
+export const cancelRocket = (id) => ({ type: CANCEL_ROCKET, id });
 
 const reducer = (state = [], action) => {
   switch (action.type) {
@@ -28,6 +30,11 @@ const reducer = (state = [], action) => {
       return state.map((rocket) => {
         if (rocket.id !== action.id) return rocket;
         return { ...rocket, reserved: true };
+      });
+    case CANCEL_ROCKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: false };
       });
     default:
       return state;
