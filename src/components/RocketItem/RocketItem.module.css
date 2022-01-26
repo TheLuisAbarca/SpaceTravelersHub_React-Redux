@@ -21,3 +21,13 @@
   border: 0;
   border-radius: 5px;
 }
+
+.cancel-btn {
+  padding: 15px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.badge {
+  margin-right: 10px;
+}
