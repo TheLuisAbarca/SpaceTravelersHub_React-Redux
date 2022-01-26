@@ -1,56 +1,47 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Space Travelers' Hub
 
-> Description the project.
+> The Space Travelers' Hub consists of Rockets, Missions, and the My Profile section.
+Will working with the real live data from the SpaceX API. To build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
+![screenshot](./app_screenshot.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Html
+- Css
+- JavaScript
+- React
+- Redux
+- API
+- React Bootstrap
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
+[Live Demo Link](https://spacetravelershub22.netlify.app/)
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+- Click on the top right green "code" button.
+- On the dropdown menu, choose "download with zip" button.
+- After download, extract the zip file and you have the project on your machine.
+- After downloading run `npm i` to install all Node packages.
+- Run `npm start` to run the project.
 
-### Setup
+## Author
 
-### Install
+👤 **Luis Abarca**
 
-### Usage
+- GitHub: [@TheLuisAbarca](https://github.com/TheLuisAbarca)
 
-### Run tests
+👤 **Kerolous Samy**
 
-### Deployment
+- GitHub: [@kerolous](https://github.com/keroloussamy)
+- Twitter: [@kerolous](https://twitter.com/SamyKerolous)
+- LinkedIn: [kerolous](https://www.linkedin.com/in/keroloussamy/)
 
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
@@ -61,12 +52,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 

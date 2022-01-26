@@ -1,0 +1,36 @@
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  color: red;
+  text-decoration: underline !important;
+  background-color: #fcfcfc;
+  font-weight: bold;
+}
+
+.navbarMain {
+  box-shadow: 0 7px 10px -5px rgba(0, 0, 0, 0.75);
+}
+
+.navbarBrand {
+  font-family: Montserrat, sans-serif;
+  font-size: 2rem !important;
+  font-weight: bold;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blue;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-decoration: none;
+}
+
+.rborder {
+  border-right: 1px solid black;
+}
