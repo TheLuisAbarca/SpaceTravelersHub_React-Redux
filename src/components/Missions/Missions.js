@@ -19,8 +19,7 @@ const Missions = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Missions</h1>
+    <div className="pt-3">
       <Container fluid>
         <Table striped bordered hover size="sm">
           <thead>

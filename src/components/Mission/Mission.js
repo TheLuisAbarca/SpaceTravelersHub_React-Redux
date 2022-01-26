@@ -15,14 +15,23 @@ const Mission = ({ mission }) => {
       dispatch(leaveMission(mission.mission_id));
     }
   };
-
+  /*
+  Other valid way of do it!
   const badgeRender = () => {
     if (mission.reserved) {
       return <Badge bg="primary">Active Member</Badge>;
     }
     return <Badge bg="secondary" className={style.capitalized}>Not a member</Badge>;
   };
-
+  <Button
+    onClick={clickHandler}
+    type="button"
+    variant={(mission.reserved) ? 'outline-danger' : 'outline-secondary'}
+  >
+    {(mission.reserved) ? 'Leave ' : 'Join '}
+    Mission
+  </Button>
+  */
   const classMissionTitle = `align-top ${style.bold}`;
 
   return (
@@ -31,17 +40,12 @@ const Mission = ({ mission }) => {
         <td className={classMissionTitle}>{mission.mission_name}</td>
         <td>{mission.mission_description}</td>
         <td className="align-middle">
-          {badgeRender()}
+          {mission.reserved && <Badge bg="primary">Active Member</Badge>}
+          {!mission.reserved && <Badge bg="secondary" className={style.capitalized}>Not a member</Badge>}
         </td>
         <td className="align-middle">
-          <Button
-            onClick={clickHandler}
-            type="button"
-            variant={(mission.reserved) ? 'outline-danger' : 'outline-secondary'}
-          >
-            {(mission.reserved) ? 'Leave ' : 'Join '}
-            Mission
-          </Button>
+          {mission.reserved && <Button onClick={clickHandler} type="button" variant="outline-secondary">Join Mission</Button>}
+          {mission.reserved && <Button onClick={clickHandler} type="button" variant="outline-danger">Leave Mission</Button>}
         </td>
       </tr>
     </>
